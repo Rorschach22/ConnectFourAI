@@ -1,0 +1,1 @@
+([:dependencies ([org.clojure/clojure "1.7.0-beta3"] [quil/quil "2.2.5"] [inflections/inflections "0.9.14"] [org.clojars.quil-firstclass-shapes/firstclassshapes "0.0.1"] [org.clojure/tools.nrepl "0.2.6" :exclusions ([org.clojure/clojure]) :scope "test"] [clojure-complete/clojure-complete "0.2.3" :exclusions ([org.clojure/clojure]) :scope "test"])])
