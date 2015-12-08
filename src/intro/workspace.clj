@@ -1,9 +1,7 @@
 (ns intro.workspace
   (:require [quil.core :as q]
             [quil.middleware :as m]
-            [firstclassshapes.core :refer :all])
-
-  (:import [connectFour ConnectFourAI]))
+            [firstclassshapes.core :refer :all]))
 
 
 
