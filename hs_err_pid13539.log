@@ -1,0 +1,474 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Cannot create GC thread. Out of system resources.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (gcTaskThread.cpp:48), pid=13539, tid=140464944432896
+#
+# JRE version:  (8.0_20-b26) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.20-b23 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fc084009800):  JavaThread "Unknown thread" [_thread_in_vm, id=13540, stack(0x00007fc08b0dc000,0x00007fc08b1dd000)]
+
+Stack: [0x00007fc08b0dc000,0x00007fc08b1dd000],  sp=0x00007fc08b1db720,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa76cea]  VMError::report_and_die()+0x2ca
+V  [libjvm.so+0x4e52fb]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x8b
+V  [libjvm.so+0x5afaff]  GCTaskThread::GCTaskThread(GCTaskManager*, unsigned int, unsigned int)+0x11f
+V  [libjvm.so+0x5af068]  GCTaskManager::initialize()+0x2c8
+V  [libjvm.so+0x90697b]  ParallelScavengeHeap::initialize()+0x32b
+V  [libjvm.so+0xa44d0d]  Universe::initialize_heap()+0xfd
+V  [libjvm.so+0xa4512f]  universe_init()+0x3f
+V  [libjvm.so+0x612055]  init_globals()+0x65
+V  [libjvm.so+0xa2acdd]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x24d
+V  [libjvm.so+0x6a9414]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x736e]  JavaMain+0x9e
+C  [libpthread.so.0+0x7555]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007fc084009800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=13540, stack(0x00007fc08b0dc000,0x00007fc08b1dd000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:00 1194267                            /usr/java/jdk1.8.0_20/bin/java
+00600000-00601000 rw-p 00000000 fd:00 1194267                            /usr/java/jdk1.8.0_20/bin/java
+00b56000-00b77000 rw-p 00000000 00:00 0                                  [heap]
+83e00000-89200000 rw-p 00000000 00:00 0 
+89200000-d6a00000 ---p 00000000 00:00 0 
+d6a00000-d9400000 rw-p 00000000 00:00 0 
+d9400000-100000000 ---p 00000000 00:00 0 
+398d800000-398d821000 r-xp 00000000 fd:00 394548                         /usr/lib64/ld-2.21.so
+398da20000-398da21000 r--p 00020000 fd:00 394548                         /usr/lib64/ld-2.21.so
+398da21000-398da22000 rw-p 00021000 fd:00 394548                         /usr/lib64/ld-2.21.so
+398da22000-398da23000 rw-p 00000000 00:00 0 
+398dc00000-398dc03000 r-xp 00000000 fd:00 394802                         /usr/lib64/libdl-2.21.so
+398dc03000-398de02000 ---p 00003000 fd:00 394802                         /usr/lib64/libdl-2.21.so
+398de02000-398de03000 r--p 00002000 fd:00 394802                         /usr/lib64/libdl-2.21.so
+398de03000-398de04000 rw-p 00003000 fd:00 394802                         /usr/lib64/libdl-2.21.so
+398e000000-398e1b7000 r-xp 00000000 fd:00 394549                         /usr/lib64/libc-2.21.so
+398e1b7000-398e3b6000 ---p 001b7000 fd:00 394549                         /usr/lib64/libc-2.21.so
+398e3b6000-398e3ba000 r--p 001b6000 fd:00 394549                         /usr/lib64/libc-2.21.so
+398e3ba000-398e3bc000 rw-p 001ba000 fd:00 394549                         /usr/lib64/libc-2.21.so
+398e3bc000-398e3c0000 rw-p 00000000 00:00 0 
+398e400000-398e417000 r-xp 00000000 fd:00 394588                         /usr/lib64/libpthread-2.21.so
+398e417000-398e616000 ---p 00017000 fd:00 394588                         /usr/lib64/libpthread-2.21.so
+398e616000-398e617000 r--p 00016000 fd:00 394588                         /usr/lib64/libpthread-2.21.so
+398e617000-398e618000 rw-p 00017000 fd:00 394588                         /usr/lib64/libpthread-2.21.so
+398e618000-398e61c000 rw-p 00000000 00:00 0 
+398e800000-398e907000 r-xp 00000000 fd:00 394563                         /usr/lib64/libm-2.21.so
+398e907000-398eb06000 ---p 00107000 fd:00 394563                         /usr/lib64/libm-2.21.so
+398eb06000-398eb07000 r--p 00106000 fd:00 394563                         /usr/lib64/libm-2.21.so
+398eb07000-398eb08000 rw-p 00107000 fd:00 394563                         /usr/lib64/libm-2.21.so
+398fc00000-398fc07000 r-xp 00000000 fd:00 395009                         /usr/lib64/librt-2.21.so
+398fc07000-398fe06000 ---p 00007000 fd:00 395009                         /usr/lib64/librt-2.21.so
+398fe06000-398fe07000 r--p 00006000 fd:00 395009                         /usr/lib64/librt-2.21.so
+398fe07000-398fe08000 rw-p 00007000 fd:00 395009                         /usr/lib64/librt-2.21.so
+7fc075000000-7fc075270000 rwxp 00000000 00:00 0 
+7fc075270000-7fc084000000 ---p 00000000 00:00 0 
+7fc084000000-7fc084039000 rw-p 00000000 00:00 0 
+7fc084039000-7fc088000000 ---p 00000000 00:00 0 
+7fc088f56000-7fc0891cb000 rw-p 00000000 00:00 0 
+7fc0891cb000-7fc0891cc000 ---p 00000000 00:00 0 
+7fc0891cc000-7fc0892cc000 rw-p 00000000 00:00 0 
+7fc0892cc000-7fc0892cd000 ---p 00000000 00:00 0 
+7fc0892cd000-7fc0893f7000 rw-p 00000000 00:00 0                          [stack:13541]
+7fc0893f7000-7fc089663000 ---p 00000000 00:00 0 
+7fc089663000-7fc08968d000 rw-p 00000000 00:00 0 
+7fc08968d000-7fc0898f9000 ---p 00000000 00:00 0 
+7fc0898f9000-7fc08990e000 rw-p 00000000 00:00 0 
+7fc08990e000-7fc089a44000 ---p 00000000 00:00 0 
+7fc089a44000-7fc089a4f000 rw-p 00000000 00:00 0 
+7fc089a4f000-7fc089e05000 ---p 00000000 00:00 0 
+7fc089e05000-7fc089e1f000 r-xp 00000000 fd:00 1980908                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libzip.so
+7fc089e1f000-7fc08a01f000 ---p 0001a000 fd:00 1980908                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libzip.so
+7fc08a01f000-7fc08a020000 rw-p 0001a000 fd:00 1980908                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libzip.so
+7fc08a025000-7fc08a82a000 r--s 00000000 fd:00 2622190                    /var/lib/sss/mc/passwd
+7fc08a82d000-7fc08a835000 r-xp 00000000 fd:00 432002                     /usr/lib64/libnss_sss.so.2
+7fc08a835000-7fc08aa34000 ---p 00008000 fd:00 432002                     /usr/lib64/libnss_sss.so.2
+7fc08aa34000-7fc08aa35000 r--p 00007000 fd:00 432002                     /usr/lib64/libnss_sss.so.2
+7fc08aa35000-7fc08aa36000 rw-p 00008000 fd:00 432002                     /usr/lib64/libnss_sss.so.2
+7fc08aa65000-7fc08aa71000 r-xp 00000000 fd:00 427607                     /usr/lib64/libnss_files-2.21.so
+7fc08aa71000-7fc08ac70000 ---p 0000c000 fd:00 427607                     /usr/lib64/libnss_files-2.21.so
+7fc08ac70000-7fc08ac71000 r--p 0000b000 fd:00 427607                     /usr/lib64/libnss_files-2.21.so
+7fc08ac71000-7fc08ac72000 rw-p 0000c000 fd:00 427607                     /usr/lib64/libnss_files-2.21.so
+7fc08ac9d000-7fc08acc7000 r-xp 00000000 fd:00 1980873                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libjava.so
+7fc08acc7000-7fc08aec7000 ---p 0002a000 fd:00 1980873                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libjava.so
+7fc08aec7000-7fc08aec9000 rw-p 0002a000 fd:00 1980873                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libjava.so
+7fc08aecd000-7fc08aeda000 r-xp 00000000 fd:00 1980907                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libverify.so
+7fc08aeda000-7fc08b0da000 ---p 0000d000 fd:00 1980907                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libverify.so
+7fc08b0da000-7fc08b0dc000 rw-p 0000d000 fd:00 1980907                    /usr/java/jdk1.8.0_20/jre/lib/amd64/libverify.so
+7fc08b0dc000-7fc08b0df000 ---p 00000000 00:00 0 
+7fc08b0df000-7fc08b1dd000 rw-p 00000000 00:00 0                          [stack:13540]
+7fc08b1dd000-7fc08be47000 r-xp 00000000 fd:00 2108482                    /usr/java/jdk1.8.0_20/jre/lib/amd64/server/libjvm.so
+7fc08be47000-7fc08c046000 ---p 00c6a000 fd:00 2108482                    /usr/java/jdk1.8.0_20/jre/lib/amd64/server/libjvm.so
+7fc08c046000-7fc08c11d000 rw-p 00c69000 fd:00 2108482                    /usr/java/jdk1.8.0_20/jre/lib/amd64/server/libjvm.so
+7fc08c11d000-7fc08c15f000 rw-p 00000000 00:00 0 
+7fc08c165000-7fc08c17a000 r-xp 00000000 fd:00 2108511                    /usr/java/jdk1.8.0_20/lib/amd64/jli/libjli.so
+7fc08c17a000-7fc08c379000 ---p 00015000 fd:00 2108511                    /usr/java/jdk1.8.0_20/lib/amd64/jli/libjli.so
+7fc08c379000-7fc08c37a000 rw-p 00014000 fd:00 2108511                    /usr/java/jdk1.8.0_20/lib/amd64/jli/libjli.so
+7fc08c395000-7fc08c39d000 rw-s 00000000 00:23 15568711                   /tmp/hsperfdata_mcart046/13539
+7fc08c39f000-7fc08c3a3000 rw-p 00000000 00:00 0 
+7fc08c3a3000-7fc08c3a4000 r--p 00000000 00:00 0 
+7fc08c3a4000-7fc08c3a9000 rw-p 00000000 00:00 0 
+7fff4d26e000-7fff4d290000 rw-p 00000000 00:00 0                          [stack]
+7fff4d32d000-7fff4d32f000 r--p 00000000 00:00 0                          [vvar]
+7fff4d32f000-7fff4d331000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:/home/mcart046/.lein/self-installs/leiningen-2.5.1-standalone.jar -Dfile.encoding=UTF-8 -Dmaven.wagon.http.ssl.easy=false -Dmaven.wagon.rto=10000 -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Dleiningen.original.pwd=/home/mcart046/CSci4409/connectFourAI -Dleiningen.script=/home/mcart046/bin/lein 
+java_command: clojure.main -m leiningen.core.main run
+java_class_path (initial): /home/mcart046/.lein/self-installs/leiningen-2.5.1-standalone.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=/home/mcart046/.lein/self-installs/leiningen-2.5.1-standalone.jar
+PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/local/heroku/bin:/home/mcart046/bin:/usr/local/heroku/bin:/home/mcart046/bin:/usr/local/heroku/bin
+SHELL=/bin/bash
+DISPLAY=:1.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa77530], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa77530], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8e1d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8e1d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8e1d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8e1d90], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8e35c0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Fedora release 22 (Twenty Two)
+
+uname:Linux 4.1.6-201.fc22.x86_64 #1 SMP Fri Sep 4 17:49:24 UTC 2015 x86_64
+libc:glibc 2.21 NPTL 2.21 
+rlimit: STACK 8192k, CORE 0k, NPROC 4096, NOFILE 4096, AS infinity
+load average:52.23 26.26 10.20
+
+/proc/meminfo:
+MemTotal:        8132724 kB
+MemFree:          419040 kB
+MemAvailable:    4824612 kB
+Buffers:          116516 kB
+Cached:          3490296 kB
+SwapCached:        15212 kB
+Active:          3749496 kB
+Inactive:        2537972 kB
+Active(anon):    1929012 kB
+Inactive(anon):   887340 kB
+Active(file):    1820484 kB
+Inactive(file):  1650632 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:       8142844 kB
+SwapFree:        8022740 kB
+Dirty:               460 kB
+Writeback:             0 kB
+AnonPages:       2666016 kB
+Mapped:           440744 kB
+Shmem:            135696 kB
+Slab:            1118572 kB
+SReclaimable:     976924 kB
+SUnreclaim:       141648 kB
+KernelStack:       73888 kB
+PageTables:       100732 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12209204 kB
+Committed_AS:   11678008 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      346484 kB
+VmallocChunk:   34358947836 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:     4003920 kB
+DirectMap2M:     4341760 kB
+DirectMap1G:     1048576 kB
+
+
+CPU:total 8 (8 cores per cpu, 1 threads per core) family 21 model 2 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 1400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 16
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 4000.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 17
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 2100.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 18
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 1400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 19
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 4
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 1400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 4
+cpu cores	: 4
+apicid		: 20
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 5
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 2100.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 5
+cpu cores	: 4
+apicid		: 21
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 6
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 3400.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 6
+cpu cores	: 4
+apicid		: 22
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+processor	: 7
+vendor_id	: AuthenticAMD
+cpu family	: 21
+model		: 2
+model name	: AMD FX(tm)-8350 Eight-Core Processor           
+stepping	: 0
+microcode	: 0x6000832
+cpu MHz		: 2100.000
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 8
+core id		: 7
+cpu cores	: 4
+apicid		: 23
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 popcnt aes xsave avx f16c lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs xop skinit wdt lwp fma4 tce nodeid_msr tbm topoext perfctr_core perfctr_nb arat cpb hw_pstate npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold vmmcall bmi1
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 7982.61
+TLB size	: 1536 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm 100mhzsteps hwpstate cpb eff_freq_ro
+
+
+
+Memory: 4k page, physical 8132724k(419040k free), swap 8142844k(8022740k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.20-b23) for linux-amd64 JRE (1.8.0_20-b26), built on Jul 30 2014 13:13:52 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Sun Dec 13 14:40:04 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

@@ -1,0 +1,37 @@
+Regular - uber vs uber
+2m 11s
+
+pmap added to minimax - uber vs uber
+all cores kicked off to around 100%, it was moving really fast but then all of the sudden we hit an out of memory error pretty quickly.
+increased memory
+actually slower than make-move
+
+
+pmap added to make-move - uber vs uber
+1m 13s
+
+pmap added to hueristic - uber vs uber
+2m 41s
+
+pmap added to bit-count - uber vs uber
+completely slows it down, waited 2 and a half mintutes and 1 play still had not happened. It finishes on lower things
+
+Regular - very-strong vs very-strong
+20s
+
+pmap added to minimax - very-strong vs very-strong
+14s
+
+pmap added to make-move - very-strong vs very-strong
+14s
+
+pmap added to make-move and minimax - very-strong vs very-strong
+16s
+
+Regular - strong vs strong
+7s
+
+pmap added to bit-count - strong vs strong
+1m 9s
+
+Mainly due to time restrictions because of our failures, we really only got into the pmap and never really got into promises or futures. Historically these are more difficult to implement. I don't recall there being a huge time increase using them either. Our understanding of the minimax algorithm also hinders our ability to implement futures and promises.

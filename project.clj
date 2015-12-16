@@ -1,11 +1,12 @@
-(defproject intro "0.2.3"
-  :description "A pilot project to use Clojure for introductory computer science courses at the University of Minnesota - Morris"
-  :dependencies [[org.clojure/clojure "1.7.0-beta3"]
-                 [quil "2.2.5"]
-                 [inflections "0.9.14"]
-                 ;[uncomplicate/clojurecl "0.3.0"]
-                 [org.clojars.quil-firstclass-shapes/firstclassshapes "0.0.1"]]
-  :plugins [[lein-autoexpect "1.0"]
-            [lein-pprint "1.1.2"]]
-  :java-source-paths ["src/java/connectFour/"]
-  :main intro.core)
+(defproject clj-connect-four "0.1.0"
+  :description "Clojure Connect Four Game and AI"
+  :url "https://github.com/naeg/clj-connect-four"
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :dependencies [[org.clojure/clojure "1.5.0"]
+                 [org.clojure/tools.cli "0.2.2"]
+                 [org.clojure/tools.trace "0.7.5"]
+                 [lacij "0.8.1"]]
+  :main clj-connect-four.core
+  :jvm-opts ["-Xmx4G"])
+;  :main clj-connect-four.draw-graph)
